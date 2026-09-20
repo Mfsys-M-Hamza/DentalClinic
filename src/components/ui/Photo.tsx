@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { cn } from "@/lib/utils";
+import { cn, withBase } from "@/lib/utils";
 
 interface PhotoProps {
   src: string;
@@ -28,7 +28,7 @@ export function Photo({
   return (
     <div className={cn("relative overflow-hidden bg-brand-100", ratio, className)}>
       <Image
-        src={src}
+        src={withBase(src)}
         alt={alt}
         fill
         sizes={sizes}

@@ -18,6 +18,8 @@ const staticRoutes: { path: string; priority: number }[] = [
   { path: "/terms-and-conditions", priority: 0.3 },
 ];
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...staticRoutes.map((r) => ({ url: absoluteUrl(r.path), priority: r.priority })),

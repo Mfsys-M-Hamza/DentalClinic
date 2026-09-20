@@ -4,6 +4,7 @@ import { clinicConfig } from "@/clinic-config";
 export const alt = `${clinicConfig.name} — ${clinicConfig.tagline}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
+export const dynamic = "force-static";
 
 /** Social-sharing card generated from the clinic config — no design work needed per clinic. */
 export default function OpengraphImage() {

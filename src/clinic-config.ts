@@ -88,7 +88,7 @@ export const clinicConfig = {
 
   /* ── SEO & local search ───────────────────────────────────────────────── */
   seo: {
-    siteUrl: "https://www.example-clinic.com", // CONFIRM – the real domain, no trailing slash
+    siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.example-clinic.com", // CONFIRM – the real domain, no trailing slash
     primaryCity: "Rawalpindi",
     serviceArea: "Bahria Town and nearby areas of Rawalpindi and Islamabad",
     primaryKeyword: "dentist in Bahria Town Rawalpindi",

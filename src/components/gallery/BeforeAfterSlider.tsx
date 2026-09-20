@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { MoveHorizontal } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn, withBase } from "@/lib/utils";
 
 interface Props {
   before: string;
@@ -23,7 +23,7 @@ export function BeforeAfterSlider({ before, after, alt, priority, className }: P
   return (
     <div className={cn("relative aspect-[4/3] w-full overflow-hidden rounded-3xl bg-brand-100 select-none", className)}>
       <Image
-        src={after}
+        src={withBase(after)}
         alt={`After: ${alt}`}
         fill
         sizes="(min-width: 1024px) 60vw, 100vw"
@@ -34,7 +34,7 @@ export function BeforeAfterSlider({ before, after, alt, priority, className }: P
       />
       <div className="absolute inset-0" style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}>
         <Image
-          src={before}
+          src={withBase(before)}
           alt={`Before: ${alt}`}
           fill
           sizes="(min-width: 1024px) 60vw, 100vw"

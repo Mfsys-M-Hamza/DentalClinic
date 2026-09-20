@@ -1,6 +1,7 @@
 "use client";
 
 import { useId, useState, useSyncExternalStore } from "react";
+import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { AlertCircle, CalendarCheck, CheckCircle2, LoaderCircle, Pencil, Phone } from "lucide-react";
@@ -474,9 +475,9 @@ export function AppointmentForm() {
                   <span>
                     I agree that {clinicConfig.name} may use the details I provide to contact me about this appointment
                     request, as described in the{" "}
-                    <a href="/privacy-policy" target="_blank" className="font-semibold text-brand-700 underline underline-offset-2">
+                    <Link href="/privacy-policy" target="_blank" className="font-semibold text-brand-700 underline underline-offset-2">
                       Privacy Policy
-                    </a>
+                    </Link>
                     . <span className="text-red-700" aria-hidden="true">*</span>
                   </span>
                 </label>
