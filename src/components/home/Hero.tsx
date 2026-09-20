@@ -102,7 +102,7 @@ export function Hero() {
             <div className="overflow-hidden rounded-t-[999px] rounded-b-[2.5rem] shadow-lift ring-1 ring-white/25">
               <Photo
                 src={clinicConfig.images.hero}
-                alt="Welcoming dental treatment room with soft natural light"
+                alt="Bright, modern treatment room at Dental Studio by Dr. Laila"
                 ratio="aspect-[4/5]"
                 sizes="(min-width: 1024px) 40vw, 90vw"
                 priority
@@ -117,7 +117,7 @@ export function Hero() {
           >
             <Photo
               src={clinicConfig.images.heroSecondary}
-              alt="Friendly clinic reception area"
+              alt="Reception desk with the clinic logo"
               ratio="aspect-[4/5]"
               sizes="200px"
             />

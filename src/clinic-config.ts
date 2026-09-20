@@ -137,10 +137,10 @@ export const clinicConfig = {
 
   /* ── Images (swap paths for real clinic photography) ──────────────────── */
   images: {
-    hero: "/images/hero.svg",
-    heroSecondary: "/images/about-1.svg",
-    about: "/images/about-2.svg",
-    facilities: ["/images/facility-1.svg", "/images/facility-2.svg", "/images/facility-3.svg"],
+    hero: "/images/clinic/treatment-room-1.webp",
+    heroSecondary: "/images/clinic/reception.webp",
+    about: "/images/clinic/waiting-area.webp",
+    facilities: ["/images/clinic/treatment-room-3.webp", "/images/clinic/surgery-room.webp", "/images/clinic/lounge.webp"],
   },
 } as const;
 

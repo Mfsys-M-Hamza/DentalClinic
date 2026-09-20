@@ -64,7 +64,7 @@ export default function AboutPage() {
           </Reveal>
           <Reveal delay={0.1}>
             <div className="overflow-hidden rounded-[2rem] shadow-lift">
-              <Photo src={clinicConfig.images.about} alt="Interior of the dental clinic, bright and welcoming" />
+              <Photo src={clinicConfig.images.about} alt="Comfortable waiting area inside the clinic" />
             </div>
           </Reveal>
         </div>

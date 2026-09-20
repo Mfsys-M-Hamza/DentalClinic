@@ -29,7 +29,7 @@ export function AboutPreview() {
           <div className="overflow-hidden rounded-[2rem] shadow-lift">
             <Photo
               src={clinicConfig.images.about}
-              alt="Bright, welcoming reception and waiting area of the clinic"
+              alt="Comfortable waiting area inside the clinic"
               sizes="(min-width: 1024px) 45vw, 100vw"
             />
           </div>
@@ -243,6 +243,12 @@ export function TestimonialsSection() {
   );
 }
 
+const facilityAlts = [
+  "Fully equipped treatment room with a modern dental chair",
+  "Surgery room with natural greenery",
+  "Relaxed lounge seating area",
+];
+
 export function FacilitiesSection() {
   return (
     <Section tone="brand" labelledBy="facilities-heading">
@@ -275,7 +281,7 @@ export function FacilitiesSection() {
             <div key={src} className={i === 0 ? "col-span-2" : ""}>
               <Photo
                 src={src}
-                alt={`Clinic facility photo ${i + 1}`}
+                alt={facilityAlts[i] ?? "Inside the clinic"}
                 ratio={i === 0 ? "aspect-[16/9]" : "aspect-[4/3]"}
                 sizes="(min-width: 1024px) 30vw, 50vw"
                 className="rounded-3xl ring-1 ring-white/20"
