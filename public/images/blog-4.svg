@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-label="Article image">
+<defs>
+<linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b3f3b"/><stop offset="1" stop-color="#146b63"/></linearGradient>
+<radialGradient id="r" cx="0.3" cy="0.25" r="0.8"><stop offset="0" stop-color="#5fc4b5" stop-opacity="0.55"/><stop offset="1" stop-color="#5fc4b5" stop-opacity="0"/></radialGradient>
+<filter id="sh" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#000" flood-opacity="0.22"/></filter>
+</defs>
+<rect width="1200" height="800" fill="url(#g)"/>
+<rect width="1200" height="800" fill="url(#r)"/>
+<circle cx="1020" cy="120" r="224.00000000000003" fill="#5fc4b5" opacity="0.18"/><circle cx="120" cy="720" r="256" fill="#5fc4b5" opacity="0.14"/><circle cx="900" cy="680" r="96" fill="#fff" opacity="0.12"/>
+
+<g filter="url(#sh)"><g transform="translate(464 264) scale(11.333333333333336)" opacity="1"><path d="M12 5c-1.6-1.2-4-1.3-5.4.2C5 7 5.5 9.5 6.3 12c.6 1.9.7 3.7 1.1 5.4.3 1.3 1.4 1.7 2 .6.7-1.2.8-2.6 1.4-3.4.5-.6 1.3-.6 1.8 0 .6.8.7 2.2 1.4 3.4.6 1.1 1.7.7 2-.6.4-1.7.5-3.5 1.1-5.4.8-2.5 1.3-5-.3-6.8C16 3.7 13.6 3.8 12 5z" fill="#fff" stroke="none" stroke-width="0.4"/></g></g>
+<text x="600" y="752" text-anchor="middle" font-family="Arial, sans-serif" font-size="22.400000000000002" fill="#fff" opacity="0.75" letter-spacing="1.5">ARTICLE IMAGE</text>
+</svg>

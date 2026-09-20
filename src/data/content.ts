@@ -1,0 +1,43 @@
+/** Shared marketing copy for homepage / about sections. Edit freely. */
+
+export type ContentIcon =
+  | "message"
+  | "clipboard"
+  | "heart"
+  | "shield"
+  | "users"
+  | "wallet"
+  | "calendar"
+  | "stethoscope"
+  | "sparkles"
+  | "scan"
+  | "camera"
+  | "microscope";
+
+export const whyChooseUs: { icon: ContentIcon; title: string; text: string }[] = [
+  { icon: "message", title: "Clear, honest explanations", text: "We explain what we find and your options in plain language, so you can decide with confidence." },
+  { icon: "clipboard", title: "Personalised treatment plans", text: "No one-size-fits-all. Your plan is built around your health, goals and schedule." },
+  { icon: "heart", title: "Comfort-focused care", text: "We work at your pace and discuss comfort options, especially if you feel anxious." },
+  { icon: "users", title: "Care for the whole family", text: "From children's first visits to adult treatments, everyone can see us under one roof." },
+  { icon: "calendar", title: "Convenient evening hours", text: "We're open Monday to Saturday, 4 PM – 9 PM, so care fits around work and school." },
+  { icon: "wallet", title: "Transparent conversations about cost", text: "We aim to talk through options and expected costs before treatment begins." },
+];
+
+export const treatmentProcess: { icon: ContentIcon; title: string; text: string }[] = [
+  { icon: "calendar", title: "Request your visit", text: "Book online, call, or message us on WhatsApp — we'll confirm a suitable time." },
+  { icon: "stethoscope", title: "Consultation & examination", text: "We listen to your concerns and carry out a thorough check-up." },
+  { icon: "clipboard", title: "Your personalised plan", text: "We explain your options, timing and costs so you can choose what's right for you." },
+  { icon: "sparkles", title: "Treatment with care", text: "Treatment is carried out with your comfort in mind, step by step." },
+  { icon: "heart", title: "Follow-up & support", text: "We give aftercare guidance and stay in touch as you recover." },
+];
+
+/** Facilities and accessibility from the clinic's Google profile. */
+export const facilities: { icon: ContentIcon; title: string; text: string }[] = [
+  { icon: "users", title: "Wheelchair-accessible entrance", text: "Step-free access so every patient can reach us comfortably." },
+  { icon: "calendar", title: "Parking available", text: "Wheelchair-accessible parking is available at China Center 2." },
+  { icon: "heart", title: "Restroom facilities", text: "Restrooms are available for patients and their families." },
+  { icon: "sparkles", title: "Comfort-focused care", text: "Our approach puts patient comfort first, with clear explanations at every step." },
+];
+
+export const medicalDisclaimer =
+  "The information on this website is general in nature and does not replace diagnosis, advice or treatment from a qualified dental professional. Individual results and suitability vary. If you have urgent symptoms, contact the clinic's emergency number or your local emergency service.";
