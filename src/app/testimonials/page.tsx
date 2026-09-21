@@ -23,7 +23,7 @@ export default function TestimonialsPage() {
       <PageHero
         eyebrow="Testimonials"
         title="Words from our patients"
-        description="Feedback shared by patients about their experience at the clinic."
+        description="Real feedback shared publicly on Google by patients of the clinic."
         crumbs={[{ name: "Testimonials", path: "/testimonials" }]}
       />
       <Section labelledBy="testimonial-list">
@@ -40,6 +40,11 @@ export default function TestimonialsPage() {
               </StaggerItem>
             ))}
           </Stagger>
+        )}
+        {testimonials.length > 0 && (
+          <div className="mt-14">
+            <GoogleRatingCard />
+          </div>
         )}
         {hasSamples && (
           <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-muted">

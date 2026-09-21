@@ -45,10 +45,10 @@ export default function HomePage() {
       <TeamPreview />
       <TreatmentProcess />
       <GalleryPreview />
-      <TestimonialsSection />
       <FacilitiesSection />
       <InsurancePayments />
       <FAQPreview items={previewFaqs} />
+      <TestimonialsSection />
       <CTASection />
       <MapSection />
       <Container className="space-y-4 py-10">

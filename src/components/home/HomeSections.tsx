@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, CreditCard, Languages, ShieldCheck, Wallet } from "lucide-react";
+import { ArrowRight, CheckCircle2, CreditCard, ExternalLink, Languages, ShieldCheck, Star, Wallet } from "lucide-react";
 import { clinicConfig } from "@/clinic-config";
 import { services } from "@/data/services";
 import { team } from "@/data/team";
@@ -211,13 +211,16 @@ export function GalleryPreview() {
 }
 
 export function TestimonialsSection() {
+  const { rating, count, url } = clinicConfig.googleReviews;
+  const featured = testimonials.filter((t) => t.featured);
+  const shown = featured.length ? featured : testimonials.slice(0, 6);
   return (
-    <Section labelledBy="testimonials-heading">
+    <Section labelledBy="testimonials-heading" className="bg-brand-50/60">
       <SectionHeading
         id="testimonials-heading"
-        eyebrow="Patient stories"
+        eyebrow="Patient reviews"
         title="What our patients say"
-        description="Genuine feedback from the people we care for."
+        description="Real feedback from patients, shared publicly on Google."
       />
       {testimonials.length === 0 ? (
         <Reveal>
@@ -225,16 +228,30 @@ export function TestimonialsSection() {
         </Reveal>
       ) : (
         <>
-          <Stagger className="grid gap-6 md:grid-cols-3">
-            {testimonials.map((t, i) => (
-              <StaggerItem key={i}>
-                <TestimonialCard testimonial={t} />
+          <Reveal className="mx-auto -mt-4 mb-10 flex w-fit flex-wrap items-center justify-center gap-x-4 gap-y-2 rounded-full bg-white px-6 py-3 shadow-soft ring-1 ring-brand-100">
+            <span className="font-serif text-3xl font-semibold text-brand-700">{rating}</span>
+            <span className="flex gap-0.5" role="img" aria-label={`${rating} out of 5 stars`}>
+              {Array.from({ length: 5 }, (_, i) => (
+                <Star key={i} className="size-5 fill-accent text-accent" aria-hidden="true" />
+              ))}
+            </span>
+            <span className="text-sm text-muted">
+              from <strong className="text-ink">{count}</strong> Google reviews
+            </span>
+          </Reveal>
+          <Stagger className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {shown.map((t) => (
+              <StaggerItem key={t.name}>
+                <TestimonialCard testimonial={t} clamp />
               </StaggerItem>
             ))}
           </Stagger>
-          <Reveal className="mt-10 text-center">
+          <Reveal className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Button href="/testimonials" variant="secondary">
-              Read more testimonials
+              Read all patient reviews
+            </Button>
+            <Button href={url} external variant="ghost">
+              See us on Google <ExternalLink className="size-4" aria-hidden="true" />
             </Button>
           </Reveal>
         </>

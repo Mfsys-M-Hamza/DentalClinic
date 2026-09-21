@@ -1,7 +1,7 @@
 import { Quote, Star } from "lucide-react";
 import type { Testimonial } from "@/data/testimonials";
 
-export function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
+export function TestimonialCard({ testimonial, clamp }: { testimonial: Testimonial; clamp?: boolean }) {
   return (
     <figure className="relative flex h-full flex-col rounded-3xl bg-white p-7 shadow-soft ring-1 ring-brand-100">
       <Quote className="size-9 text-brand-200" aria-hidden="true" />
@@ -16,7 +16,9 @@ export function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
           ))}
         </p>
       )}
-      <blockquote className="mt-3 flex-1 leading-relaxed text-ink/90">{testimonial.quote}</blockquote>
+      <blockquote className={clamp ? "mt-3 line-clamp-8 flex-1 leading-relaxed whitespace-pre-line text-ink/90" : "mt-3 flex-1 leading-relaxed whitespace-pre-line text-ink/90"}>
+        {testimonial.quote}
+      </blockquote>
       <figcaption className="mt-6 flex items-center justify-between gap-3 border-t border-brand-100 pt-4">
         <div>
           <p className="font-semibold">{testimonial.name}</p>
