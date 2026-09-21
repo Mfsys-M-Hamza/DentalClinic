@@ -14,7 +14,7 @@ import { Photo } from "@/components/ui/Photo";
 import { contentIcons } from "@/components/ui/icons";
 import { ServiceCard } from "@/components/cards/ServiceCard";
 import { DentistCard } from "@/components/cards/DentistCard";
-import { TestimonialCard } from "@/components/cards/TestimonialCard";
+import { ReviewsSlider } from "@/components/cards/ReviewsSlider";
 import { GoogleRatingCard } from "@/components/cards/GoogleRatingCard";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { BeforeAfterSlider } from "@/components/gallery/BeforeAfterSlider";
@@ -212,8 +212,8 @@ export function GalleryPreview() {
 
 export function TestimonialsSection() {
   const { rating, count, url } = clinicConfig.googleReviews;
-  const featured = testimonials.filter((t) => t.featured);
-  const shown = featured.length ? featured : testimonials.slice(0, 6);
+  // featured reviews first, then the rest — the slider can carry them all
+  const shown = [...testimonials.filter((t) => t.featured), ...testimonials.filter((t) => !t.featured)];
   return (
     <Section labelledBy="testimonials-heading" className="bg-brand-50/60">
       <SectionHeading
@@ -239,14 +239,10 @@ export function TestimonialsSection() {
               from <strong className="text-ink">{count}</strong> Google reviews
             </span>
           </Reveal>
-          <Stagger className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {shown.map((t) => (
-              <StaggerItem key={t.name}>
-                <TestimonialCard testimonial={t} clamp />
-              </StaggerItem>
-            ))}
-          </Stagger>
-          <Reveal className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <Reveal>
+            <ReviewsSlider items={shown} label="Patient reviews" />
+          </Reveal>
+          <Reveal className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Button href="/testimonials" variant="secondary">
               Read all patient reviews
             </Button>
