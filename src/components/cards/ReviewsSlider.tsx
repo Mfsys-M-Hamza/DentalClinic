@@ -15,7 +15,10 @@ const AUTOPLAY_MS = 7000;
  */
 export function ReviewsSlider({ items, label }: { items: Testimonial[]; label: string }) {
   const track = useRef<HTMLUListElement>(null);
+  // `lead` = slide at the left edge (used for prev/next); `index` = slide highlighted in the dots.
+  const [lead, setLead] = useState(0);
   const [index, setIndex] = useState(0);
+  const [atEnd, setAtEnd] = useState(false);
   const [userPaused, setUserPaused] = useState(false);
   const [hovering, setHovering] = useState(false);
   const [reduced, setReduced] = useState(true);
@@ -57,8 +60,10 @@ export function ReviewsSlider({ items, label }: { items: Testimonial[]; label: s
           }
         });
         // at the very end, the last slide may not reach the left edge
-        if (el.scrollLeft + el.clientWidth >= el.scrollWidth - 4) best = items.length - 1;
-        setIndex(best);
+        const end = el.scrollLeft + el.clientWidth >= el.scrollWidth - 4;
+        setLead(best);
+        setAtEnd(end);
+        setIndex(end ? items.length - 1 : best);
       });
     };
     el.addEventListener("scroll", onScroll, { passive: true });
@@ -74,14 +79,16 @@ export function ReviewsSlider({ items, label }: { items: Testimonial[]; label: s
     const id = window.setInterval(() => {
       const el = track.current;
       if (!el) return;
-      const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 4;
-      goTo(atEnd ? 0 : Math.min(index + 1, items.length - 1));
+      const end = el.scrollLeft + el.clientWidth >= el.scrollWidth - 4;
+      goTo(end ? 0 : Math.min(lead + 1, items.length - 1));
     }, AUTOPLAY_MS);
     return () => window.clearInterval(id);
-  }, [playing, index, goTo, items.length]);
+  }, [playing, lead, goTo, items.length]);
 
-  const prev = () => goTo(Math.max(0, index - 1));
-  const next = () => goTo(Math.min(items.length - 1, index + 1));
+  const prev = () => goTo(Math.max(0, lead - 1));
+  const next = () => {
+    if (!atEnd) goTo(Math.min(items.length - 1, lead + 1));
+  };
 
   return (
     <div
@@ -127,7 +134,7 @@ export function ReviewsSlider({ items, label }: { items: Testimonial[]; label: s
         <button
           type="button"
           onClick={prev}
-          disabled={index === 0}
+          disabled={lead === 0}
           aria-label="Previous review"
           className="grid size-11 place-items-center rounded-full bg-white text-brand-700 shadow-soft ring-1 ring-brand-200 transition hover:bg-brand-50 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-brand disabled:opacity-40"
         >
@@ -161,7 +168,7 @@ export function ReviewsSlider({ items, label }: { items: Testimonial[]; label: s
         <button
           type="button"
           onClick={next}
-          disabled={index >= items.length - 1}
+          disabled={atEnd}
           aria-label="Next review"
           className="grid size-11 place-items-center rounded-full bg-white text-brand-700 shadow-soft ring-1 ring-brand-200 transition hover:bg-brand-50 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-brand disabled:opacity-40"
         >

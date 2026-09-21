@@ -30,7 +30,7 @@ export const testimonials: Testimonial[] = [
     name: "Muhammad Abdul Mannan",
     detail: "Scaling & PRP · Google review",
     quote:
-      "Had my scaling and PRP treatment done at Laila Hayat Clinic and I couldn’t be happier with the experience. Dr. Minahil was incredibly professional, gentle, and attentive throughout the procedure. She explained everything clearly and made sure I was comfortable at every step, which really put me at ease.\n\nA special mention to Dr. Numrah as well, who also contributed and ensured the treatment went smoothly. The entire team was welcoming, caring, and highly skilled.\n\nThe results have been excellent, and the level of care and attention to detail was truly impressive. I would highly recommend Dr. Minahil, Dr. Numrah, and the team at Laila Hayat Clinic to anyone looking for quality dental care. Thank you for such a wonderful experience!",
+      "Had my scaling and PRP treatment done at Laila Hayat Clinic and I couldn’t be happier with the experience. Dr. Minahil was incredibly professional, gentle, and attentive throughout the procedure. She explained everything clearly and made sure I was comfortable at every step, which really put me at ease.",
     isSample: false,
     featured: true,
   },
