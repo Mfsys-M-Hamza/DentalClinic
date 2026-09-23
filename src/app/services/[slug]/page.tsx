@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CalendarCheck, CheckCircle2, ClipboardList, Clock, HeartHandshake, Users } from "lucide-react";
 import { clinicConfig } from "@/clinic-config";
-import { services, serviceBySlug, serviceImage } from "@/data/services";
+import { services, serviceBySlug, categoryImages } from "@/data/services";
 import { blogPosts } from "@/data/blog";
 import { buildMetadata, faqSchema, serviceSchema } from "@/lib/seo";
 import { serviceMessage } from "@/lib/whatsapp";
@@ -83,7 +83,7 @@ export default async function ServicePage(props: PageProps<"/services/[slug]">) 
 
       <Section className="!pt-0 !pb-8">
         <Reveal className="overflow-hidden rounded-[2rem] shadow-lift">
-          <Photo src={serviceImage(service.slug)} alt="" ratio="aspect-[21/9]" sizes="100vw" priority />
+          <Photo src={categoryImages[service.category]} alt="" ratio="aspect-[21/9]" sizes="100vw" priority />
         </Reveal>
       </Section>
 

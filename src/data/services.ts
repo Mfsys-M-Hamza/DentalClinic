@@ -297,19 +297,13 @@ export const services: Service[] = [
 export const serviceBySlug = (slug: string) => services.find((s) => s.slug === slug);
 export const serviceCategories = Array.from(new Set(services.map((s) => s.category)));
 
-/**
- * Original, copyright-free illustration for each service — a stylised row of teeth
- * (no faces) with a small accent themed to the treatment. See public/images/ and, for
- * the generator, git history of gen-teeth.mjs. Falls back to a generic image for any
- * service slug added later without one of its own.
- */
-export const serviceImages: Record<string, string> = {
-  "general-dentistry": "/images/service-general-dentistry.webp",
-  "dental-checkups": "/images/service-dental-checkups.webp",
-  "teeth-cleaning": "/images/service-teeth-cleaning.webp",
-  "teeth-whitening": "/images/service-teeth-whitening.webp",
-  "dental-fillings": "/images/service-dental-fillings.webp",
-  "prp-treatment": "/images/service-prp-treatment.webp",
-  "braces-and-orthodontics": "/images/service-braces-and-orthodontics.webp",
+/** Original, copyright-free illustration used per service category (see public/images/). */
+export const categoryImages: Record<Service["category"], string> = {
+  Preventive: "/images/service-preventive.webp",
+  Cosmetic: "/images/service-cosmetic.webp",
+  Restorative: "/images/service-restorative.webp",
+  Orthodontics: "/images/service-orthodontics.webp",
+  Surgical: "/images/service-restorative.webp",
+  Emergency: "/images/blog-emergency.webp",
+  Children: "/images/blog-children.webp",
 };
-export const serviceImage = (slug: string) => serviceImages[slug] ?? "/images/service-general-dentistry.webp";
