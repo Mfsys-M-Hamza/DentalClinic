@@ -237,53 +237,36 @@ export function TestimonialsSection() {
   );
 }
 
-const facilityAlts = [
-  "Fully equipped treatment room with a modern dental chair",
-  "Surgery room with natural greenery",
-  "Relaxed lounge seating area",
-];
-
+/**
+ * No real facility photos have been supplied yet, so this section is text-only —
+ * see clinicConfig.images.facilities to add real photos back in later.
+ */
 export function FacilitiesSection() {
   return (
     <Section tone="brand" labelledBy="facilities-heading">
-      <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-        <Reveal>
-          <p className="mb-3 text-sm font-semibold tracking-[0.14em] text-brand-200 uppercase">Facilities &amp; accessibility</p>
-          <h2 id="facilities-heading" className="text-3xl leading-tight font-semibold sm:text-4xl">
-            Easy to reach, comfortable to visit
-          </h2>
-          <p className="mt-5 text-lg leading-relaxed text-brand-100">
-            Located in {clinicConfig.seo.primaryCity}, with a comfort-first approach to every visit.
-          </p>
-          <Stagger as="ul" className="mt-8 grid gap-6 sm:grid-cols-2">
-            {facilities.map((f) => {
-              const Icon = contentIcons[f.icon];
-              return (
-                <StaggerItem as="li" key={f.title}>
-                  <span className="grid size-11 place-items-center rounded-xl bg-white/10 text-brand-100">
-                    <Icon className="size-5" aria-hidden="true" />
-                  </span>
-                  <h3 className="mt-3 font-serif text-lg font-semibold">{f.title}</h3>
-                  <p className="mt-1 text-sm leading-relaxed text-brand-100">{f.text}</p>
-                </StaggerItem>
-              );
-            })}
-          </Stagger>
-        </Reveal>
-        <Reveal delay={0.1} className="grid grid-cols-2 gap-4">
-          {clinicConfig.images.facilities.map((src, i) => (
-            <div key={src} className={i === 0 ? "col-span-2" : ""}>
-              <Photo
-                src={src}
-                alt={facilityAlts[i] ?? "Inside the clinic"}
-                ratio={i === 0 ? "aspect-[16/9]" : "aspect-[4/3]"}
-                sizes="(min-width: 1024px) 30vw, 50vw"
-                className="rounded-3xl ring-1 ring-white/20"
-              />
-            </div>
-          ))}
-        </Reveal>
-      </div>
+      <Reveal className="mx-auto max-w-3xl text-center">
+        <p className="mb-3 text-sm font-semibold tracking-[0.14em] text-brand-200 uppercase">Facilities &amp; accessibility</p>
+        <h2 id="facilities-heading" className="text-3xl leading-tight font-semibold sm:text-4xl">
+          Easy to reach, comfortable to visit
+        </h2>
+        <p className="mt-5 text-lg leading-relaxed text-brand-100">
+          Located in {clinicConfig.seo.primaryCity}, with a comfort-first approach to every visit.
+        </p>
+      </Reveal>
+      <Stagger as="ul" className="mx-auto mt-10 grid max-w-4xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {facilities.map((f) => {
+          const Icon = contentIcons[f.icon];
+          return (
+            <StaggerItem as="li" key={f.title} className="rounded-2xl bg-white/5 p-5 ring-1 ring-white/10">
+              <span className="grid size-11 place-items-center rounded-xl bg-white/10 text-brand-100">
+                <Icon className="size-5" aria-hidden="true" />
+              </span>
+              <h3 className="mt-3 font-serif text-lg font-semibold">{f.title}</h3>
+              <p className="mt-1 text-sm leading-relaxed text-brand-100">{f.text}</p>
+            </StaggerItem>
+          );
+        })}
+      </Stagger>
     </Section>
   );
 }
