@@ -32,7 +32,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-01-12",
     readTime: "4 min read",
     author: clinicConfig.name,
-    image: "/images/blog-1.svg",
+    image: "/images/blog-checkups.webp",
     relatedServices: ["dental-checkups", "teeth-cleaning"],
     sections: [
       {
@@ -76,7 +76,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-02-03",
     readTime: "3 min read",
     author: clinicConfig.name,
-    image: "/images/blog-2.svg",
+    image: "/images/blog-first-visit.webp",
     relatedServices: ["general-dentistry", "dental-checkups"],
     sections: [
       {
@@ -112,7 +112,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-18",
     readTime: "5 min read",
     author: clinicConfig.name,
-    image: "/images/blog-3.svg",
+    image: "/images/blog-emergency.webp",
     relatedServices: ["dental-checkups", "dental-fillings"],
     sections: [
       {
@@ -148,7 +148,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-04-09",
     readTime: "4 min read",
     author: clinicConfig.name,
-    image: "/images/blog-4.svg",
+    image: "/images/blog-children.webp",
     relatedServices: ["dental-checkups", "teeth-cleaning"],
     sections: [
       {

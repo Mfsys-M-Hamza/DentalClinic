@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CalendarCheck, CheckCircle2, ClipboardList, Clock, HeartHandshake, Users } from "lucide-react";
 import { clinicConfig } from "@/clinic-config";
-import { services, serviceBySlug } from "@/data/services";
+import { services, serviceBySlug, categoryImages } from "@/data/services";
 import { blogPosts } from "@/data/blog";
 import { buildMetadata, faqSchema, serviceSchema } from "@/lib/seo";
 import { serviceMessage } from "@/lib/whatsapp";
@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/Button";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { serviceIcons } from "@/components/ui/icons";
+import { Photo } from "@/components/ui/Photo";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { CTASection } from "@/components/sections/CTASection";
 import { EmergencyNotice, MedicalDisclaimer } from "@/components/sections/Notices";
@@ -79,6 +80,12 @@ export default async function ServicePage(props: PageProps<"/services/[slug]">) 
         </Button>
         <WhatsAppButton size="lg" message={message} label="Ask about this on WhatsApp" />
       </PageHero>
+
+      <Section className="!pt-0 !pb-8">
+        <Reveal className="overflow-hidden rounded-[2rem] shadow-lift">
+          <Photo src={categoryImages[service.category]} alt="" ratio="aspect-[21/9]" sizes="100vw" priority />
+        </Reveal>
+      </Section>
 
       <Section labelledBy="overview-heading">
         <div className="grid gap-12 lg:grid-cols-[1.6fr_1fr]">

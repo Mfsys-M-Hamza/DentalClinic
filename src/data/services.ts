@@ -296,3 +296,14 @@ export const services: Service[] = [
 
 export const serviceBySlug = (slug: string) => services.find((s) => s.slug === slug);
 export const serviceCategories = Array.from(new Set(services.map((s) => s.category)));
+
+/** Original, copyright-free illustration used per service category (see public/images/). */
+export const categoryImages: Record<Service["category"], string> = {
+  Preventive: "/images/service-preventive.webp",
+  Cosmetic: "/images/service-cosmetic.webp",
+  Restorative: "/images/service-restorative.webp",
+  Orthodontics: "/images/service-orthodontics.webp",
+  Surgical: "/images/service-restorative.webp",
+  Emergency: "/images/blog-emergency.webp",
+  Children: "/images/blog-children.webp",
+};

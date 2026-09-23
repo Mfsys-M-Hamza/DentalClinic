@@ -8,7 +8,7 @@ export function BlogCard({ post }: { post: BlogPost }) {
     <article className="group relative flex h-full flex-col overflow-hidden rounded-3xl bg-white shadow-soft ring-1 ring-brand-100 transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
       <Photo
         src={post.image}
-        alt={`Photo of the clinic accompanying the article “${post.title}”`}
+        alt=""
         ratio="aspect-[3/2]"
         sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
         zoom

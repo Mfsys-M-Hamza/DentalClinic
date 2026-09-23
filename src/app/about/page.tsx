@@ -92,7 +92,7 @@ export default function AboutPage() {
       <Section labelledBy="lead-heading">
         <div className="grid items-center gap-10 lg:grid-cols-[0.8fr_1.2fr]">
           <Reveal>
-            <Photo src="/images/clinic/doctor-portrait.webp" alt={`Portrait of a dentist at ${name}`} ratio="aspect-[4/5]" className="rounded-[2rem] shadow-lift" sizes="(min-width: 1024px) 35vw, 100vw" />
+            <Photo src="/images/clinic/doctor-portrait.webp" alt={`Portrait of ${doctor.name}`} ratio="aspect-[4/5]" className="rounded-[2rem] shadow-lift" sizes="(min-width: 1024px) 35vw, 100vw" />
           </Reveal>
           <Reveal delay={0.1}>
             <p className="mb-3 text-sm font-semibold tracking-[0.14em] text-brand uppercase">{doctor.role}</p>
@@ -101,7 +101,7 @@ export default function AboutPage() {
             </h2>
             {doctor.qualifications && <p className="mt-2 text-muted">{doctor.qualifications}</p>}
             <p className="mt-5 text-lg leading-relaxed text-muted">
-              Our aim is simple: dental care that feels comfortable, is clearly explained and is planned around each patient.
+              {doctor.name} leads care at {name} with a simple aim: dental care that feels comfortable, is clearly explained and is planned around each patient.
             </p>
             <dl className="mt-8 grid grid-cols-2 gap-6 sm:grid-cols-4">
               {clinicConfig.home.stats.map((s) => (

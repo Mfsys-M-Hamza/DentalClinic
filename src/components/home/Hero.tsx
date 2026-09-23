@@ -117,7 +117,7 @@ export function Hero() {
           >
             <Photo
               src={clinicConfig.images.heroSecondary}
-              alt="Portrait of a dentist at Dental Valley"
+              alt={`Portrait of ${clinicConfig.doctor.name}`}
               ratio="aspect-[4/5]"
               sizes="200px"
             />
@@ -129,7 +129,7 @@ export function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.9, duration: 0.6, ease: EASE }}
           >
-            <p className="text-xs font-semibold tracking-wider text-brand uppercase">Care team</p>
+            <p className="text-xs font-semibold tracking-wider text-brand uppercase">Led by</p>
             <p className="font-serif text-base font-semibold">{clinicConfig.doctor.name}</p>
             <p className="max-w-40 text-xs text-muted">{clinicConfig.doctor.qualifications || clinicConfig.doctor.role}</p>
           </motion.div>

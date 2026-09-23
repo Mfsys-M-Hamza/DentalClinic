@@ -25,12 +25,12 @@ export const clinicConfig = {
   name: "Dental Valley",
   tagline: "Friendly, modern dental care in Model Town Humak", // CONFIRM – not on the profile, edit freely
 
-  /** Face of the clinic shown in the hero and About page. CONFIRM — no dentist was named on the profile. */
+  /** Face of the clinic shown in the hero and About page. */
   doctor: {
-    name: "Dental Valley Team", // CONFIRM – replace with the lead dentist's name if the clinic wants one featured
-    qualifications: "", // CONFIRM – hidden while empty
+    name: "Dr. Abdul Sattar",
+    qualifications: "", // CONFIRM – e.g. "BDS" (hidden while empty)
     yearsOfExperience: "", // CONFIRM – hidden while empty
-    role: "General & family dentistry",
+    role: "Lead Dentist",
   },
 
   /* ── Contact ──────────────────────────────────────────────────────────── */
