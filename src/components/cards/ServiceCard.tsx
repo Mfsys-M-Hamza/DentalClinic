@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import type { Service } from "@/data/types";
-import { categoryImages } from "@/data/services";
+import { serviceImage } from "@/data/services";
 import { serviceIcons } from "@/components/ui/icons";
 import { Photo } from "@/components/ui/Photo";
 
@@ -10,7 +10,7 @@ export function ServiceCard({ service }: { service: Service }) {
   return (
     <article className="group relative flex h-full flex-col rounded-3xl bg-white shadow-soft ring-1 ring-brand-100 transition duration-300 hover:-translate-y-1.5 hover:shadow-lift hover:ring-brand/30">
       <div className="overflow-hidden rounded-t-3xl">
-        <Photo src={categoryImages[service.category]} alt="" ratio="aspect-[16/9]" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" zoom />
+        <Photo src={serviceImage(service.slug)} alt="" ratio="aspect-[16/9]" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" zoom />
       </div>
       <div className="relative flex flex-1 flex-col p-6">
         <span className="absolute -top-7 left-6 grid size-14 place-items-center rounded-2xl bg-brand text-white shadow-lift ring-4 ring-white transition-colors duration-300">
