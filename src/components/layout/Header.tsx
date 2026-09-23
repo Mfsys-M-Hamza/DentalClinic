@@ -7,8 +7,8 @@ import { Menu, X } from "lucide-react";
 import { clinicConfig, navigation } from "@/clinic-config";
 import { Container } from "@/components/ui/Layout";
 import { buttonClasses } from "@/components/ui/Button";
-import Image from "next/image";
-import { cn, withBase } from "@/lib/utils";
+import { ToothMark } from "@/components/ui/icons";
+import { cn } from "@/lib/utils";
 import { MobileNav } from "./MobileNav";
 
 const subscribeScroll = (cb: () => void) => {
@@ -19,8 +19,13 @@ const subscribeScroll = (cb: () => void) => {
 export function Logo({ light }: { light?: boolean }) {
   return (
     <Link href="/" className="group flex items-center gap-3" aria-label={`${clinicConfig.name} — home`}>
-      <span className="grid size-11 place-items-center overflow-hidden rounded-2xl bg-white shadow-soft ring-1 ring-brand-100 transition-transform duration-300 group-hover:-rotate-6">
-        <Image src={withBase("/images/clinic/logo-mark.png")} alt="" width={44} height={44} unoptimized className="size-full object-contain" />
+      <span
+        className={cn(
+          "grid size-11 place-items-center rounded-2xl transition-transform duration-300 group-hover:-rotate-6",
+          light ? "bg-white text-brand-800" : "bg-brand text-white shadow-soft",
+        )}
+      >
+        <ToothMark className="size-6" />
       </span>
       <span className="flex flex-col leading-tight">
         <span className={cn("font-serif text-lg font-semibold", light ? "text-white" : "text-ink")}>

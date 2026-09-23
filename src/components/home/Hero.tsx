@@ -102,7 +102,7 @@ export function Hero() {
             <div className="overflow-hidden rounded-t-[999px] rounded-b-[2.5rem] shadow-lift ring-1 ring-white/25">
               <Photo
                 src={clinicConfig.images.hero}
-                alt="Bright, modern treatment room at Dental Studio by Dr. Laila"
+                alt="Dental Valley's clinical team treating a patient in the surgery room"
                 ratio="aspect-[4/5]"
                 sizes="(min-width: 1024px) 40vw, 90vw"
                 priority
@@ -117,7 +117,7 @@ export function Hero() {
           >
             <Photo
               src={clinicConfig.images.heroSecondary}
-              alt="Reception desk with the clinic logo"
+              alt="Portrait of a dentist at Dental Valley"
               ratio="aspect-[4/5]"
               sizes="200px"
             />
@@ -129,7 +129,7 @@ export function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.9, duration: 0.6, ease: EASE }}
           >
-            <p className="text-xs font-semibold tracking-wider text-brand uppercase">Led by</p>
+            <p className="text-xs font-semibold tracking-wider text-brand uppercase">Care team</p>
             <p className="font-serif text-base font-semibold">{clinicConfig.doctor.name}</p>
             <p className="max-w-40 text-xs text-muted">{clinicConfig.doctor.qualifications || clinicConfig.doctor.role}</p>
           </motion.div>

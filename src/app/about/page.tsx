@@ -47,7 +47,11 @@ export default function AboutPage() {
             </h2>
             <div className="mt-5 space-y-4 text-lg leading-relaxed text-muted">
               <p>
-                Dental Studio by Dr. Laila is a dental clinic in Bahria Town Phase 7, Rawalpindi, where patient comfort and skilled treatment come first. Our team offers teeth whitening, fillings, scaling and polishing, PRP treatment and braces.
+                {name} is a dental clinic in {seo.primaryCity} where patient comfort and clear communication come first. Our team offers general dentistry, cleaning, whitening and a range of other treatments — see our{" "}
+                <Link href="/services" className="font-semibold text-brand-700 underline underline-offset-4">
+                  services
+                </Link>{" "}
+                for the full list.
               </p>
               <p>
                 We combine modern dental techniques with an approach that treats every patient as an individual. From
@@ -88,7 +92,7 @@ export default function AboutPage() {
       <Section labelledBy="lead-heading">
         <div className="grid items-center gap-10 lg:grid-cols-[0.8fr_1.2fr]">
           <Reveal>
-            <Photo src="/images/team-1.svg" alt={`Portrait of ${doctor.name}`} ratio="aspect-[4/5]" className="rounded-[2rem] shadow-lift" sizes="(min-width: 1024px) 35vw, 100vw" />
+            <Photo src="/images/clinic/doctor-portrait.webp" alt={`Portrait of a dentist at ${name}`} ratio="aspect-[4/5]" className="rounded-[2rem] shadow-lift" sizes="(min-width: 1024px) 35vw, 100vw" />
           </Reveal>
           <Reveal delay={0.1}>
             <p className="mb-3 text-sm font-semibold tracking-[0.14em] text-brand uppercase">{doctor.role}</p>
@@ -97,7 +101,7 @@ export default function AboutPage() {
             </h2>
             {doctor.qualifications && <p className="mt-2 text-muted">{doctor.qualifications}</p>}
             <p className="mt-5 text-lg leading-relaxed text-muted">
-              {doctor.name} founded the clinic with a simple aim: dental care that feels comfortable, is clearly explained and is planned around each patient. She works alongside Dr. Minahil, Dr. Numrah and Dr. Warda.
+              Our aim is simple: dental care that feels comfortable, is clearly explained and is planned around each patient.
             </p>
             <dl className="mt-8 grid grid-cols-2 gap-6 sm:grid-cols-4">
               {clinicConfig.home.stats.map((s) => (

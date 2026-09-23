@@ -19,7 +19,7 @@ export const whyChooseUs: { icon: ContentIcon; title: string; text: string }[] =
   { icon: "clipboard", title: "Personalised treatment plans", text: "No one-size-fits-all. Your plan is built around your health, goals and schedule." },
   { icon: "heart", title: "Comfort-focused care", text: "We work at your pace and discuss comfort options, especially if you feel anxious." },
   { icon: "users", title: "Care for the whole family", text: "From children's first visits to adult treatments, everyone can see us under one roof." },
-  { icon: "calendar", title: "Convenient evening hours", text: "We're open Monday to Saturday, 4 PM – 9 PM, so care fits around work and school." },
+  { icon: "calendar", title: "Convenient opening hours", text: "See our opening hours below, or message us on WhatsApp to check availability." },
   { icon: "wallet", title: "Transparent conversations about cost", text: "We aim to talk through options and expected costs before treatment begins." },
 ];
 
@@ -31,12 +31,16 @@ export const treatmentProcess: { icon: ContentIcon; title: string; text: string 
   { icon: "heart", title: "Follow-up & support", text: "We give aftercare guidance and stay in touch as you recover." },
 ];
 
-/** Facilities and accessibility from the clinic's Google profile. */
+/**
+ * Facilities and accessibility. CONFIRM with the clinic — the Google profile's
+ * limited view didn't list accessibility features (wheelchair access, parking,
+ * etc.), so only general, non-specific points are used until confirmed.
+ */
 export const facilities: { icon: ContentIcon; title: string; text: string }[] = [
-  { icon: "users", title: "Wheelchair-accessible entrance", text: "Step-free access so every patient can reach us comfortably." },
-  { icon: "calendar", title: "Parking available", text: "Wheelchair-accessible parking is available at China Center 2." },
-  { icon: "heart", title: "Restroom facilities", text: "Restrooms are available for patients and their families." },
   { icon: "sparkles", title: "Comfort-focused care", text: "Our approach puts patient comfort first, with clear explanations at every step." },
+  { icon: "heart", title: "Welcoming for the whole family", text: "A calm, friendly environment for patients of all ages." },
+  { icon: "clipboard", title: "Clear treatment planning", text: "We talk through your options and costs before any treatment begins." },
+  { icon: "message", title: "Easy to reach us", text: "Call, message us on WhatsApp, or visit us in Model Town Humak." },
 ];
 
 export const medicalDisclaimer =

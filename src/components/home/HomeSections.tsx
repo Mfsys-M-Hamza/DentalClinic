@@ -132,6 +132,9 @@ export function WhyChooseUs() {
 }
 
 export function TeamPreview() {
+  // No dentists confirmed yet for this clinic (see src/data/team.ts) — skip the section
+  // rather than showing an empty grid.
+  if (team.length === 0) return null;
   return (
     <Section tone="tint" labelledBy="team-heading">
       <SectionHeading
@@ -220,7 +223,7 @@ export function TestimonialsSection() {
         id="testimonials-heading"
         eyebrow="Patient reviews"
         title="What our patients say"
-        description="Real feedback from patients, shared publicly on Google."
+        description="See what patients say about their visit."
       />
       {testimonials.length === 0 ? (
         <Reveal>
@@ -272,7 +275,7 @@ export function FacilitiesSection() {
             Easy to reach, comfortable to visit
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-brand-100">
-            Located in Bahria Town Phase 7, with step-free access, parking and a comfort-first approach to every visit.
+            Located in {clinicConfig.seo.primaryCity}, with a comfort-first approach to every visit.
           </p>
           <Stagger as="ul" className="mt-8 grid gap-6 sm:grid-cols-2">
             {facilities.map((f) => {

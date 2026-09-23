@@ -1,9 +1,33 @@
-import { ExternalLink, Star } from "lucide-react";
+import { ExternalLink, MapPin, Star } from "lucide-react";
 import { clinicConfig } from "@/clinic-config";
 
-/** Shows the clinic's public Google rating. Used until real testimonials are added. */
+/**
+ * Shows the clinic's public Google rating. Used until real testimonials are added.
+ * If no rating/count has been confirmed yet (see `googleReviews` in clinic-config.ts),
+ * shows a plain "find us on Google" card instead of inventing a rating.
+ */
 export function GoogleRatingCard() {
   const { rating, count, url } = clinicConfig.googleReviews;
+
+  if (!rating) {
+    return (
+      <div className="mx-auto max-w-2xl rounded-[2rem] bg-white p-8 text-center shadow-lift ring-1 ring-brand-100 sm:p-10">
+        <span className="mx-auto grid size-14 place-items-center rounded-2xl bg-brand-100 text-brand-700">
+          <MapPin className="size-7" aria-hidden="true" />
+        </span>
+        <p className="mt-4 text-lg text-muted">Find {clinicConfig.name} on Google to see the latest patient reviews.</p>
+        <a
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-6 inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3 font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-brand-600"
+        >
+          View us on Google <ExternalLink className="size-4" aria-hidden="true" />
+        </a>
+      </div>
+    );
+  }
+
   return (
     <div className="mx-auto max-w-2xl rounded-[2rem] bg-white p-8 text-center shadow-lift ring-1 ring-brand-100 sm:p-10">
       <p className="font-serif text-6xl font-semibold text-brand-700">{rating}</p>

@@ -23,7 +23,7 @@ export default function TestimonialsPage() {
       <PageHero
         eyebrow="Testimonials"
         title="Words from our patients"
-        description="Real feedback shared publicly on Google by patients of the clinic."
+        description="Feedback shared by patients about their experience at the clinic."
         crumbs={[{ name: "Testimonials", path: "/testimonials" }]}
       />
       <Section labelledBy="testimonial-list">
