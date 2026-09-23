@@ -5,7 +5,6 @@ import { services } from "@/data/services";
 import { team } from "@/data/team";
 import { testimonials } from "@/data/testimonials";
 import { allFaqs } from "@/data/faqs";
-import { galleryItems } from "@/data/gallery";
 import { facilities, treatmentProcess, whyChooseUs } from "@/data/content";
 import { Button } from "@/components/ui/Button";
 import { Section, SectionHeading } from "@/components/ui/Layout";
@@ -17,7 +16,6 @@ import { DentistCard } from "@/components/cards/DentistCard";
 import { ReviewsSlider } from "@/components/cards/ReviewsSlider";
 import { GoogleRatingCard } from "@/components/cards/GoogleRatingCard";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
-import { BeforeAfterSlider } from "@/components/gallery/BeforeAfterSlider";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 
 export function AboutPreview() {
@@ -184,33 +182,13 @@ export function TreatmentProcess() {
   );
 }
 
+/**
+ * Hidden while the gallery only has sample placeholder images (see src/data/gallery.ts) —
+ * showing fake before/after photos on the homepage isn't appropriate for a real clinic.
+ * Re-enable once real, patient-consented photos are added.
+ */
 export function GalleryPreview() {
-  const item = galleryItems[0];
-  return (
-    <Section tone="sand" labelledBy="gallery-heading">
-      <div className="grid items-center gap-12 lg:grid-cols-2">
-        <Reveal>
-          <p className="mb-3 text-sm font-semibold tracking-[0.14em] text-brand uppercase">Before &amp; after</p>
-          <h2 id="gallery-heading" className="text-3xl leading-tight font-semibold sm:text-4xl">
-            See the difference careful treatment can make
-          </h2>
-          <p className="mt-5 text-lg leading-relaxed text-muted">
-            Drag the slider to compare. Our gallery shows examples of treatments carried out at the clinic, shared with
-            patient consent. Results vary from person to person.
-          </p>
-          <Button href="/gallery" className="mt-8">
-            Browse the full gallery <ArrowRight className="size-4" aria-hidden="true" />
-          </Button>
-          <p className="mt-4 text-xs text-muted">Sample placeholder images shown — replace with real, consented patient photos.</p>
-        </Reveal>
-        <Reveal delay={0.1}>
-          <div className="rounded-[2rem] bg-white p-3 shadow-lift">
-            <BeforeAfterSlider before={item.before} after={item.after} alt={item.alt} />
-          </div>
-        </Reveal>
-      </div>
-    </Section>
-  );
+  return null;
 }
 
 export function TestimonialsSection() {

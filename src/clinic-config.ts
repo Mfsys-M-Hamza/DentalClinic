@@ -114,12 +114,12 @@ export const clinicConfig = {
       subheadline:
         "From check-ups and cleaning to fillings and more, our team takes the time to listen, explain your options and plan treatment around you.",
     },
-    /** None of these are verified for this clinic yet — replace with real figures once confirmed. */
+    /** Figures confirmed by the client. */
     stats: [
-      { label: "Years of experience", value: "[00]+" },
-      { label: "Patients served", value: "[0,000]+" },
-      { label: "Patient rating", value: "[0.0]/5" },
-      { label: "Certifications", value: "[00]" },
+      { label: "Years of experience", value: "12+" },
+      { label: "Patients served", value: "1,000+" },
+      { label: "Patient rating", value: "4.5/5" },
+      { label: "Certifications", value: "3" },
     ],
     featuredServiceSlugs: [
       "general-dentistry",
@@ -143,12 +143,12 @@ export const clinicConfig = {
     slotMinutes: 30,
   },
 
-  /* ── Images — CONFIRM: no real photography supplied yet, so placeholder
-     illustrations are used. Swap these paths for real clinic photography. ── */
+  /* ── Images — only two real photos supplied so far; reused where needed.
+     Swap these paths for more real clinic photography as it's supplied. ── */
   images: {
     hero: "/images/clinic/treatment-room.webp",
     heroSecondary: "/images/clinic/doctor-portrait.webp",
-    about: "/images/about-2.svg", // CONFIRM – swap for a real reception/waiting-area photo when supplied
+    about: "/images/clinic/treatment-room.webp",
     facilities: ["/images/facility-1.svg", "/images/facility-2.svg", "/images/facility-3.svg"], // CONFIRM – placeholders until more real photos are supplied
   },
 } as const;
