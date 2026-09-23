@@ -8,7 +8,7 @@ const staticRoutes: { path: string; priority: number }[] = [
   { path: "/about", priority: 0.8 },
   { path: "/services", priority: 0.9 },
   { path: "/team", priority: 0.7 },
-  { path: "/gallery", priority: 0.7 },
+  // "/gallery" is omitted while it only has sample placeholder images — see clinic-config.ts navigation.
   { path: "/book-appointment", priority: 0.9 },
   { path: "/testimonials", priority: 0.6 },
   { path: "/faq", priority: 0.7 },

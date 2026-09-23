@@ -161,9 +161,11 @@ export const navigation = {
     { label: "About", href: "/about" },
     { label: "Services", href: "/services" },
     { label: "Our Team", href: "/team" },
-    { label: "Gallery", href: "/gallery" },
     { label: "Blog", href: "/blog" },
     { label: "Contact", href: "/contact" },
+    // Gallery is hidden from navigation until real, patient-consented photos
+    // are added — see src/app/gallery/page.tsx. Add { label: "Gallery", href: "/gallery" }
+    // back here to relist it once ready.
   ],
   more: [
     { label: "Testimonials", href: "/testimonials" },
